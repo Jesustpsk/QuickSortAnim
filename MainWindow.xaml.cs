@@ -132,6 +132,7 @@ namespace QuickSortAnim
         private async void btnSort_Click(object sender, RoutedEventArgs e)
         {
             btnSort.IsEnabled = false; // Отключение кнопки сортировки
+            btnRefresh.IsEnabled = false;
             await QuickSortAnimation(array, 0, ArraySize - 1);
             
             TbArray2.Text = "Output array: {";
@@ -144,6 +145,7 @@ namespace QuickSortAnim
             }
 
             TbArray2.Text += "}.";
+            btnRefresh.IsEnabled = true;
             btnSort.IsEnabled = true; // Включение кнопки сортировки
         }
 
